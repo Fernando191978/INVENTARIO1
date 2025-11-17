@@ -1,0 +1,98 @@
+{% extends 'clientes/base.html' %}
+{% load bootstrap4 %}
+
+{% block title %}Detalle de Cliente - {{ cliente.nombre_completo }}{% endblock %}
+{% block header %}Detalle de Cliente{% endblock %}
+
+{% block extra_buttons %}
+<div>
+    <a href="{% url 'clientes:cliente_update' cliente.pk %}" class="btn btn-primary mr-2">
+        <i class="fas fa-edit"></i> Editar
+    </a>
+    <a href="{% url 'clientes:cliente_list' %}" class="btn btn-secondary">
+        <i class="fas fa-arrow-left"></i> Volver
+    </a>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header bg-info text-white">
+                <h5 class="mb-0">
+                    <i class="fas fa-user"></i> Información del Cliente
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-md-4 font-weight-bold">Documento:</div>
+                    <div class="col-md-8">
+                        <code class="bg-light p-2 rounded">{{ cliente.numero_documento }}</code>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-4 font-weight-bold">Nombre completo:</div>
+                    <div class="col-md-8">{{ cliente.nombre_completo }}</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-4 font-weight-bold">Email:</div>
+                    <div class="col-md-8">
+                        {% if cliente.email %}
+                            <a href="mailto:{{ cliente.email }}">{{ cliente.email }}</a>
+                        {% else %}
+                            <span class="text-muted">No especificado</span>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-4 font-weight-bold">Teléfono:</div>
+                    <div class="col-md-8">
+                        {% if cliente.telefono %}
+                            {{ cliente.telefono }}
+                        {% else %}
+                            <span class="text-muted">No especificado</span>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-4 font-weight-bold">Dirección:</div>
+                    <div class="col-md-8">
+                        {% if cliente.direccion %}
+                            {{ cliente.direccion|linebreaks }}
+                        {% else %}
+                            <span class="text-muted">No especificada</span>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 font-weight-bold">Fecha de registro:</div>
+                    <div class="col-md-8">{{ cliente.fecha_creacion|date:"d/m/Y H:i" }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header bg-warning text-dark">
+                <h6 class="mb-0"><i class="fas fa-cogs"></i> Acciones Rápidas</h6>
+            </div>
+            <div class="card-body text-center">
+                <a href="{% url 'clientes:cliente_update' cliente.pk %}" class="btn btn-primary btn-block mb-2">
+                    <i class="fas fa-edit"></i> Editar Cliente
+                </a>
+                <a href="{% url 'clientes:cliente_delete' cliente.pk %}" class="btn btn-danger btn-block mb-2">
+                    <i class="fas fa-trash"></i> Eliminar Cliente
+                </a>
+                <a href="{% url 'clientes:cliente_list' %}" class="btn btn-secondary btn-block mb-2">
+                    <i class="fas fa-list"></i> Ver Todos los Clientes
+                </a>
+                <a href="{% url 'clientes:cliente_create' %}" class="btn btn-success btn-block">
+                    <i class="fas fa-plus"></i> Nuevo Cliente
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

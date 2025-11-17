@@ -1,0 +1,72 @@
+{% load bootstrap4 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Inventario - {% block title %}{% endblock %}</title>
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .navbar-brand { font-weight: bold; }
+        .table-responsive { overflow-x: auto; }
+        .venta-total { font-size: 1.2rem; font-weight: bold; }
+        .item-venta { border-bottom: 1px solid #eee; padding: 10px 0; }
+        .formset-row { margin-bottom: 15px; padding: 15px; background: #f8f9fa; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'ventas:venta_list' %}">
+                <i class="fas fa-cash-register"></i> Gestión de Ventas
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarVentas">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarVentas">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'ventas:venta_list' %}">
+                            <i class="fas fa-list"></i> Lista de Ventas
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'ventas:venta_create' %}">
+                            <i class="fas fa-plus-circle"></i> Nueva Venta
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'productos:producto_list' %}">
+                            <i class="fas fa-boxes"></i> Ir a Productos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'clientes:cliente_list' %}">
+                            <i class="fas fa-users"></i> Ir a Clientes
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        {% bootstrap_messages %}
+        
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>{% block header %}{% endblock %}</h2>
+            {% block extra_buttons %}{% endblock %}
+        </div>
+        
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    {% bootstrap_javascript jquery='full' %}
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,63 @@
+{% extends 'productos/base.html' %}
+{% load bootstrap4 %}
+
+{% block title %}Eliminar Producto{% endblock %}
+{% block header %}Confirmar Eliminación{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body text-center">
+                <div class="alert alert-warning">
+                    <h4><i class="fas fa-exclamation-triangle"></i> ¿Está seguro que desea eliminar este producto?</h4>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5>{{ producto.nombre }}</h5>
+                        <p class="text-muted">{{ producto.descripcion|default:"Sin descripción" }}</p>
+                        <table class="table table-sm table-bordered">
+                            <tr>
+                                <th>SKU:</th>
+                                <td><code>{{ producto.sku }}</code></td>
+                            </tr>
+                            <tr>
+                                <th>Precio:</th>
+                                <td>${{ producto.precio }}</td>
+                            </tr>
+                            <tr>
+                                <th>Stock Actual:</th>
+                                <td>{{ producto.stock }}</td>
+                            </tr>
+                            <tr>
+                                <th>Stock Mínimo:</th>
+                                <td>{{ producto.stock_minimo }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-danger mr-2">
+                            <i class="fas fa-trash"></i> Sí, Eliminar
+                        </button>
+                        <a href="{% url 'productos:producto_detail' producto.pk %}" class="btn btn-secondary">
+                            <i class="fas fa-times"></i> Cancelar
+                        </a>
+                    </div>
+                </form>
+                
+                <div class="alert alert-info mt-3">
+                    <small>
+                        <i class="fas fa-info-circle"></i> 
+                        Esta acción no se puede deshacer. Se eliminarán todos los movimientos asociados a este producto.
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

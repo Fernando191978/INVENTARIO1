@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Venta {{ venta.id }}</title>
+
+    <!-- Estos estilos funcionan en el navegador.
+         WeasyPrint usará su propio CSS si lo indicás desde la vista -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body class="p-4">
+
+    <h2 class="text-primary">Venta #{{ venta.id }}</h2>
+
+    <p><strong>Fecha:</strong> {{ venta.fecha }}</p>
+    <p><strong>Cliente:</strong> {{ cliente.nombre }}</p>
+    <p><strong>Vendedor:</strong> {{ usuario }}</p>
+
+    <hr>
+
+    <h4>Productos</h4>
+
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.producto.nombre }}</td>
+                <td>{{ item.cantidad }}</td>
+                <td>${{ item.precio }}</td>
+                <td>${{ item.subtotal }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h3 class="text-end mt-4">
+        Total: <strong>${{ venta.total }}</strong>
+    </h3>
+
+</body>
+</html>

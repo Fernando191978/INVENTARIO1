@@ -1,0 +1,63 @@
+{% extends 'productos/base.html' %}
+{% load bootstrap4 %}
+{% load crispy_forms_tags %}
+
+{% block title %}Ajustar Stock - {{ producto.nombre }}{% endblock %}
+{% block header %}Ajuste de Stock{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header bg-warning text-white">
+                <h5 class="mb-0"><i class="fas fa-adjust"></i> Ajustar Stock</h5>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info">
+                    <strong>Producto:</strong> {{ producto.nombre }}<br>
+                    <strong>Stock actual:</strong> {{ producto.stock }}<br>
+                    <strong>Stock mínimo:</strong> {{ producto.stock_minimo }}
+                </div>
+
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-warning">
+                            <i class="fas fa-sync-alt"></i> Ajustar Stock
+                        </button>
+                        <a href="{% url 'productos:producto_detail' producto.pk %}" class="btn btn-secondary">
+                            <i class="fas fa-arrow-left"></i> Cancelar
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header bg-info text-white">
+                <h5 class="mb-0"><i class="fas fa-info-circle"></i> Información</h5>
+            </div>
+            <div class="card-body">
+                <h6>¿Qué es un ajuste?</h6>
+                <p>Un ajuste de stock permite corregir discrepancias entre el stock real y el registrado en el sistema.</p>
+                
+                <h6 class="mt-3">Cómo funciona:</h6>
+                <ul>
+                    <li>Ingrese la cantidad <strong>real</strong> del stock</li>
+                    <li>El sistema calculará automáticamente la diferencia</li>
+                    <li>Se registrará un movimiento de ajuste</li>
+                </ul>
+                
+                <div class="alert alert-warning mt-3">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <strong>Nota:</strong> Este ajuste sobrescribirá el stock actual.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

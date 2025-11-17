@@ -1,0 +1,233 @@
+{% extends 'ventas/base.html' %}
+{% load bootstrap4 %}
+{% load crispy_forms_tags %}
+
+{% block title %}Nueva Venta{% endblock %}
+{% block header %}Nueva Venta{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header bg-success text-white">
+        <h5 class="mb-0">
+            <i class="fas fa-cash-register"></i> Registrar Nueva Venta
+        </h5>
+    </div>
+    <div class="card-body">
+        <form method="post" id="venta-form">
+            {% csrf_token %}
+            
+            <!-- Datos del cliente -->
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    {{ form.cliente|as_crispy_field }}
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="id_fecha_venta">Fecha de Venta</label>
+                        <input type="text" class="form-control" value="{{ view.object.fecha|default:'Ahora' }}" disabled>
+                        <small class="form-text text-muted">La fecha se asignará automáticamente al confirmar</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Items de venta -->
+            <h5 class="mb-3">
+                <i class="fas fa-shopping-cart"></i> Productos de la Venta
+                <small class="text-muted">(Agregue al menos un producto)</small>
+            </h5>
+            
+            {{ formset.management_form }}
+            
+            <div id="formset-container">
+                {% for form in formset %}
+                <div class="formset-row" id="form-{{ forloop.counter0 }}">
+                    <div class="row">
+                        <div class="col-md-4">
+                            {{ form.producto|as_crispy_field }}
+                        </div>
+                        <div class="col-md-2">
+                            {{ form.cantidad|as_crispy_field }}
+                        </div>
+                        <div class="col-md-2">
+                            {{ form.precio_unitario|as_crispy_field }}
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label>Subtotal</label>
+                                <input type="text" class="form-control subtotal" readonly value="0.00">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label>Eliminar</label>
+                                {% if form.instance.pk %}
+                                    {{ form.DELETE|as_crispy_field }}
+                                {% else %}
+                                    <button type="button" class="btn btn-danger btn-block remove-form" style="margin-top: 32px;">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    {{ form.id }}
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Botón para agregar más items -->
+            <div class="text-center mb-4">
+                <button type="button" id="add-form" class="btn btn-outline-success">
+                    <i class="fas fa-plus"></i> Agregar Otro Producto
+                </button>
+            </div>
+
+            <!-- Resumen de la venta -->
+            <div class="card bg-light">
+                <div class="card-body">
+                    <div class="row text-center">
+                        <div class="col-md-6">
+                            <h5>Total de la Venta</h5>
+                            <div class="venta-total text-success" id="total-venta">$0.00</div>
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Cantidad de Items</h5>
+                            <div class="venta-total text-primary" id="cantidad-items">0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botones de acción -->
+            <div class="form-group mt-4 text-center">
+                <button type="submit" class="btn btn-success btn-lg">
+                    <i class="fas fa-check-circle"></i> Confirmar Venta
+                </button>
+                <a href="{% url 'ventas:venta_list' %}" class="btn btn-secondary btn-lg">
+                    <i class="fas fa-times"></i> Cancelar
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+$(document).ready(function() {
+   
+    const formsetContainer = $('#formset-container');
+    const totalForms = $('#id_items-TOTAL_FORMS');
+    const addButton = $('#add-form');
+    const totalElement = $('#total-venta');
+    const cantidadElement = $('#cantidad-items');
+
+    // Función para actualizar subtotal y total
+    function actualizarTotales() {
+        let total = 0;
+        let cantidadItems = 0;
+        
+        $('.formset-row').each(function() {
+            const cantidad = parseFloat($(this).find('.cantidad-input').val()) || 0;
+            const precio = parseFloat($(this).find('.precio-input').val()) || 0;
+            const subtotal = cantidad * precio;
+            
+            $(this).find('.subtotal').val(subtotal.toFixed(2));
+            total += subtotal;
+            
+            if (cantidad > 0 && precio > 0) {
+                cantidadItems++;
+            }
+        });
+        
+        totalElement.text('$' + total.toFixed(2));
+        cantidadElement.text(cantidadItems);
+    }
+
+    // Actualizar precio cuando se selecciona un producto
+    $(document).on('change', '.producto-select', function() {
+        const productoId = $(this).val();
+        const formRow = $(this).closest('.formset-row');
+        const precioInput = formRow.find('.precio-input');
+        const cantidadInput = formRow.find('.cantidad-input');
+        
+        if (productoId) {
+            $.get(`/ventas/producto/${productoId}/precio/`, function(data) {
+                precioInput.val(data.precio);
+                cantidadInput.attr('max', data.stock);
+                cantidadInput.attr('placeholder', `Stock: ${data.stock}`);
+                actualizarTotales();
+            });
+        }
+    });
+
+    // Actualizar totales cuando cambia cantidad o precio
+    $(document).on('input', '.cantidad-input, .precio-input', function() {
+        actualizarTotales();
+    });
+
+    // Agregar nuevo formulario
+    addButton.click(function() {
+        const newForm = formsetContainer.find('.formset-row').first().clone();
+        const newIndex = formCount;
+        let formCount = parseInt(totalForms.val());
+        
+        newForm.attr('id', `form-${newIndex}`);
+        newForm.find('input, select').each(function() {
+            const name = $(this).attr('name').replace('-0-', `-${newIndex}-`);
+            const id = $(this).attr('id').replace('-0-', `-${newIndex}-`);
+            $(this).attr({'name': name, 'id': id}).val('');
+        });
+        
+        newForm.find('.subtotal').val('0.00');
+        newForm.find('.cantidad-input').val('1');
+        newForm.find('.precio-input').val('0.00');
+        
+        formsetContainer.append(newForm);
+        totalForms.val(formCount + 1);
+        formCount++;
+        actualizarTotales();
+    });
+
+    // Eliminar formulario
+    $(document).on('click', '.remove-form', function() {
+        const formRow = $(this).closest('.formset-row');
+        if ($('.formset-row').length > 1) {
+            formRow.remove();
+            actualizarTotales();
+        } else {
+            alert('Debe haber al menos un producto en la venta.');
+        }
+    });
+
+    // Validación antes de enviar
+    $('#venta-form').submit(function(e) {
+        let tieneItemsValidos = false;
+        
+        $('.formset-row').each(function() {
+            const cantidad = parseFloat($(this).find('.cantidad-input').val()) || 0;
+            const precio = parseFloat($(this).find('.precio-input').val()) || 0;
+            const producto = $(this).find('.producto-select').val();
+            
+            if (producto && cantidad > 0 && precio > 0) {
+                tieneItemsValidos = true;
+            }
+        });
+        
+        if (!tieneItemsValidos) {
+            e.preventDefault();
+            alert('Debe agregar al menos un producto con cantidad y precio válidos.');
+        }
+        
+        const cliente = $('#id_cliente').val();
+        if (!cliente) {
+            e.preventDefault();
+            alert('Debe seleccionar un cliente.');
+        }
+    });
+
+    // Inicializar totales
+    actualizarTotales();
+});
+</script>
+{% endblock %}

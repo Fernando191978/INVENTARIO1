@@ -1,0 +1,86 @@
+{% extends 'productos/base.html' %}
+{% load bootstrap4 %}
+{% load crispy_forms_tags %}
+
+{% block title %}Registrar Movimiento{% endblock %}
+{% block header %}Registrar Movimiento de Stock{% endblock %}
+
+{% block extra_buttons %}
+<a href="{% url 'productos:producto_detail' producto.pk %}" class="btn btn-secondary">
+    <i class="fas fa-arrow-left"></i> Volver al Producto
+</a>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header bg-info text-white">
+                <h5 class="mb-0"><i class="fas fa-exchange-alt"></i> Información del Movimiento</h5>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">
+                            <i class="fas fa-save"></i> Registrar Movimiento
+                        </button>
+                        <a href="{% url 'productos:producto_detail' producto.pk %}" class="btn btn-secondary">
+                            <i class="fas fa-times"></i> Cancelar
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0"><i class="fas fa-box"></i> Información del Producto</h5>
+            </div>
+            <div class="card-body">
+                <h6>{{ producto.nombre }}</h6>
+                <p class="text-muted small">{{ producto.descripcion|default:"Sin descripción"|truncatewords:10 }}</p>
+                <table class="table table-sm table-bordered">
+                    <tr>
+                        <th>SKU:</th>
+                        <td><code>{{ producto.sku }}</code></td>
+                    </tr>
+                    <tr>
+                        <th>Stock Actual:</th>
+                        <td>{{ producto.stock }}</td>
+                    </tr>
+                    <tr>
+                        <th>Stock Mínimo:</th>
+                        <td>{{ producto.stock_minimo }}</td>
+                    </tr>
+                    <tr>
+                        <th>Estado:</th>
+                        <td>
+                            {% if producto.necesita_reposicion %}
+                                <span class="badge badge-warning">Bajo</span>
+                            {% else %}
+                                <span class="badge badge-success">OK</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div class="card mt-3">
+            <div class="card-header bg-warning text-dark">
+                <h5 class="mb-0"><i class="fas fa-info-circle"></i> Tipos de Movimiento</h5>
+            </div>
+            <div class="card-body">
+                <p class="small mb-1"><strong>Entrada:</strong> Aumenta el stock del producto</p>
+                <p class="small mb-1"><strong>Salida:</strong> Disminuye el stock del producto</p>
+                <p class="small text-muted">El sistema validará que haya suficiente stock para las salidas.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

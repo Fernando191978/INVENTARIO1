@@ -1,0 +1,89 @@
+{% extends 'productos/base.html' %}
+{% load bootstrap4 %}
+
+{% block title %}Stock Bajo{% endblock %}
+{% block header %}Productos con Stock Bajo{% endblock %}
+
+{% block extra_buttons %}
+<div>
+    <a href="{% url 'productos:producto_list' %}" class="btn btn-primary mr-2">
+        <i class="fas fa-list"></i> Todos los Productos
+    </a>
+    <a href="{% url 'productos:producto_create' %}" class="btn btn-success">
+        <i class="fas fa-plus"></i> Nuevo Producto
+    </a>
+</div>
+{% endblock %}
+
+{% block content %}
+{% if productos %}
+<div class="alert alert-warning">
+    <i class="fas fa-exclamation-triangle"></i> 
+    <strong>Alerta:</strong> Tienes {{ productos|length }} producto(s) con stock por debajo del mínimo.
+</div>
+
+<div class="table-responsive">
+    <table class="table table-striped table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>SKU</th>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Stock Actual</th>
+                <th>Stock Mínimo</th>
+                <th>Diferencia</th>
+                <th>Precio</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto in productos %}
+            <tr class="table-warning">
+                <td><code>{{ producto.sku }}</code></td>
+                <td>
+                    {% if producto.imagen %}
+                        <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}" class="product-img rounded">
+                    {% else %}
+                        <div class="product-img bg-light d-flex align-items-center justify-content-center rounded">
+                            <i class="fas fa-image text-muted"></i>
+                        </div>
+                    {% endif %}
+                </td>
+                <td>{{ producto.nombre }}</td>
+                <td>
+                    <strong class="text-danger">{{ producto.stock }}</strong>
+                    <i class="fas fa-exclamation-circle text-danger ml-1"></i>
+                </td>
+                <td>{{ producto.stock_minimo }}</td>
+                <td>
+                    <span class="badge badge-danger">
+                        -{{ producto.stock_minimo|add:producto.stock }}
+                    </span>
+                </td>
+                <td>${{ producto.precio }}</td>
+                <td>
+                    <div class="btn-group btn-group-sm">
+                        <a href="{% url 'productos:producto_detail' producto.pk %}" class="btn btn-info" title="Ver detalle">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                        <a href="{% url 'productos:movimiento_stock_form' producto.pk %}" class="btn btn-success" title="Agregar stock">
+                            <i class="fas fa-plus-circle"></i>
+                        </a>
+                        <a href="{% url 'productos:ajustar_stock' producto.pk %}" class="btn btn-warning" title="Ajustar stock">
+                            <i class="fas fa-sync-alt"></i>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<div class="alert alert-success text-center">
+    <i class="fas fa-check-circle fa-2x mb-3"></i>
+    <h4>¡Excelente!</h4>
+    <p class="mb-0">No hay productos con stock bajo. Todos los productos tienen stock suficiente.</p>
+</div>
+{% endif %}
+{% endblock %}

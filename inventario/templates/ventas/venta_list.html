@@ -1,0 +1,150 @@
+{% extends 'ventas/base.html' %}
+{% load bootstrap4 %}
+
+{% block title %}Lista de Ventas{% endblock %}
+{% block header %}Lista de Ventas{% endblock %}
+
+{% block extra_buttons %}
+<div>
+    <a href="{% url 'ventas:venta_create' %}" class="btn btn-success">
+        <i class="fas fa-plus"></i> Nueva Venta
+    </a>
+    <a href="{% url 'dashboard' %}" class="btn btn-secondary">
+        <i class="fas fa-tachometer-alt"></i> Volver al Menu
+    </a>
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- Filtros -->
+<div class="card mb-4">
+    <div class="card-body">
+        <form method="get" class="form-inline">
+            <div class="form-group mr-3">
+                <label for="cliente" class="mr-2">Cliente:</label>
+                <select name="cliente" id="cliente" class="form-control">
+                    <option value="">Todos los clientes</option>
+                    {% for cliente in clientes %}
+                    <option value="{{ cliente.id }}" {% if cliente_filtro == cliente.id|stringformat:"i" %}selected{% endif %}>
+                        {{ cliente.nombre_completo }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group mr-3">
+                <label for="fecha" class="mr-2">Fecha:</label>
+                <input type="date" name="fecha" id="fecha" class="form-control" value="{{ fecha_filtro }}">
+            </div>
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-filter"></i> Filtrar
+            </button>
+            <a href="{% url 'ventas:venta_list' %}" class="btn btn-secondary ml-2">
+                <i class="fas fa-times"></i> Limpiar
+            </a>
+        </form>
+    </div>
+</div>
+
+{% if ventas %}
+<div class="row">
+    <div class="col-12">
+        <div class="table-responsive mb-4">
+            <table class="table table-striped table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Código</th>
+                        <th>Cliente</th>
+                        <th>Fecha</th>
+                        <th>Total</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for venta in ventas %}
+                    <tr>
+                        <td><code>{{ venta.sku }}</code></td>
+                        <td>{{ venta.cliente.nombre_completo }}</td>
+                        <td>{{ venta.fecha|date:"d/m/Y" }}</td>
+                        <td class="font-weight-bold">${{ venta.total }}</td>
+                        <td>
+                            <div class="btn-group btn-group-sm">
+                                <a href="{% url 'ventas:venta_detail' venta.pk %}" class="btn btn-info">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a href="{% url 'ventas:venta_update' venta.pk %}" class="btn btn-primary">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <a href="{% url 'ventas:venta_delete' venta.pk %}" class="btn btn-danger">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
+                                <a href="{% url 'ventas:venta_pdf' venta.pk %}" class="btn btn-dark" target="_blank">
+                                    <i class="fas fa-file-pdf"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Información adicional -->
+        <div class="card mb-4">
+            <div class="card-header bg-light">
+                <h6 class="mb-0"><i class="fas fa-info-circle"></i> Información Adicional</h6>
+            </div>
+            <div class="card-body">
+                <canvas id="graficoVentas" style="width:100%; height:300px;"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+fetch("{% url 'ventas:ventas_por_dia' %}")
+    .then(response => response.json())
+    .then(data => {
+        const fechas = data.map(item => item.fecha);
+        const totales = data.map(item => item.total);
+
+        new Chart(document.getElementById('graficoVentas'), {
+            type: 'line',
+            data: {
+                labels: fechas,
+                datasets: [{
+                    label: 'Ventas por día',
+                    data: totales,
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+    });
+</script>
+
+<!-- Paginación -->
+{% if is_paginated %}
+<div class="d-flex justify-content-between align-items-center">
+    <div>
+        Mostrando {{ page_obj.start_index }} - {{ page_obj.end_index }} de {{ page_obj.paginator.count }} ventas
+    </div>
+    {% bootstrap_pagination page_obj %}
+</div>
+{% endif %}
+
+{% else %}
+<div class="alert alert-info text-center">
+    <i class="fas fa-info-circle fa-2x mb-3"></i>
+    <h4>No se encontraron ventas</h4>
+    <p>{% if cliente_filtro or fecha_filtro %}No hay ventas que coincidan con los filtros.{% else %}No hay ventas registradas todavía.{% endif %}</p>
+    <a href="{% url 'ventas:venta_create' %}" class="btn btn-success">
+        <i class="fas fa-plus"></i> Registrar Primera Venta
+    </a>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,166 @@
+{% extends 'ventas/base.html' %}
+{% load bootstrap4 %}
+
+{% block title %}Detalle de Venta - {{ venta.codigo_venta }}{% endblock %}
+{% block header %}Detalle de Venta{% endblock %}
+
+{% block extra_buttons %}
+<div>
+    <a href="{% url 'ventas:venta_list' %}" class="btn btn-secondary">
+        <i class="fas fa-arrow-left"></i> Volver a Ventas
+    </a>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <!-- Información de la venta -->
+        <div class="card mb-4">
+            <div class="card-header bg-info text-white">
+                <h5 class="mb-0">
+                    <i class="fas fa-receipt"></i> Información de la Venta
+                </h5>
+            </div>
+            
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-md-4 font-weight-bold">Código de Venta:</div>
+                    <div class="col-md-8">
+                        <code class="bg-light p-2 rounded">{{ venta.sku }}</code>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-4 font-weight-bold">Cliente:</div>
+                    <div class="col-md-8">
+                        <a href="{% url 'clientes:cliente_detail' venta.cliente.pk %}">
+                            {{ venta.cliente.nombre_completo }}
+                        </a>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-4 font-weight-bold">Fecha :</div>
+                    <div class="col-md-8">{{ venta.fecha|date:"d/m/Y" }}</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-4 font-weight-bold">Total:</div>
+                    <div class="col-md-8">
+                        <h4 class="text-success">${{ venta.total }}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Items de la venta -->
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">
+                    <i class="fas fa-boxes"></i> Productos Vendidos
+                </h5>
+            </div>
+            <div class="card-body">
+                {% if venta.items.all %}
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                                <th>Precio Unitario</th>
+                                <th>Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in venta.items.all %}
+                            <tr>
+                                <td>
+                                    <a href="{% url 'productos:producto_detail' item.producto.pk %}">
+                                        {{ item.producto.nombre }}
+                                    </a>
+                                    <br>
+                                    <small class="text-muted">SKU: {{ item.producto.sku }}</small>
+                                </td>
+                                <td>{{ item.cantidad }}</td>
+                                <td>${{ item.precio_unitario }}</td>
+                                <td class="font-weight-bold">${{ item.subtotal }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                        <tfoot class="bg-light">
+                            <tr>
+                                <td colspan="3" class="text-right font-weight-bold">TOTAL:</td>
+                                <td class="font-weight-bold text-success">${{ venta.total }}</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                {% else %}
+                <div class="alert alert-warning text-center">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    No hay productos registrados en esta venta.
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <!-- Acciones rápidas -->
+        <div class="card">
+            <div class="card-header bg-warning text-dark">
+                <h6 class="mb-0"><i class="fas fa-cogs"></i> Acciones</h6>
+            </div>
+            <div class="card-body text-center">
+                <a href="{% url 'ventas:venta_list' %}" class="btn btn-secondary btn-block mb-2">
+                    <i class="fas fa-list"></i> Ver Todas las Ventas
+                </a>
+                <a href="{% url 'ventas:venta_create' %}" class="btn btn-success btn-block mb-2">
+                    <i class="fas fa-plus"></i> Nueva Venta
+                </a>
+                <a href="{% url 'clientes:cliente_list' %}" class="btn btn-primary btn-block mb-2">
+                    <i class="fas fa-users"></i> Ver Clientes
+                </a>
+                <a href="{% url 'productos:producto_list' %}" class="btn btn-dark btn-block">
+                    <i class="fas fa-boxes"></i> Ver Productos
+                </a>
+                <a href="{% url 'ventas:venta_pdf' venta.pk %}" class="btn btn-danger btn-block mt-2" target="_blank">
+                    Descargar PDF
+                    <i class="fas fa-file-pdf"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Información adicional -->
+        <div class="card mt-4">
+            <div class="card-header bg-light">
+                <h6 class="mb-0"><i class="fas fa-info-circle"></i> Información Adicional</h6>
+            </div>
+            <h3>Ventas por día</h3>
+            <canvas id="graficoVentas"></canvas>
+
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+            <script>
+            fetch("{% url 'ventas:ventas_por_dia' %}")
+                .then(response => response.json())
+                .then(data => {
+                    const fechas = data.map(item => item.fecha);
+                    const totales = data.map(item => item.total);
+
+                    new Chart(document.getElementById('graficoVentas'), {
+                        type: 'line',
+                        data: {
+                            labels: fechas,
+                            datasets: [{
+                                label: 'Ventas por día',
+                                data: totales,
+                                borderWidth: 2
+                            }]
+                        },
+                    });
+                });
+            </script>
+        </div>
+    </div>
+</div>
+{% endblock %}
