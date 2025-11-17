@@ -33,11 +33,8 @@ urlpatterns = [
     path('productos/', include('productos.urls')),
     path('clientes/', include('clientes.urls')),
     path('ventas/', include('ventas.urls')),
-    path('accounts/', include(('accounts.urls', 'accounts'), namespace='accounts')),
+    path('accounts/', include('accounts.urls')),
 
-    # Allauth - Solo login, password reset
-    #path('accounts/login/', auth_views.LoginView.as_view(template_name='accounts/login.html'), name='login'),
-    path('accounts/login/', RedirectView.as_view(pattern_name='index'), name='account_login_redirect'),
 ]
 
 if settings.DEBUG:
