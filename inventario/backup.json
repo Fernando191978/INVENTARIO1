@@ -1,0 +1,1991 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2025-11-18T10:50:53.664Z",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "1",
+    "object_repr": "administradores",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2025-11-18T10:51:18.169Z",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "2",
+    "object_repr": "stock",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2025-11-18T10:52:04.805Z",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "3",
+    "object_repr": "ventas",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2025-11-18T10:52:21.467Z",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "3",
+    "object_repr": "ventas",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2025-11-18T10:53:41.531Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "2",
+    "object_repr": "administrador01",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2025-11-18T10:54:01.320Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "2",
+    "object_repr": "administrador01",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2025-11-18T10:54:24.721Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "2",
+    "object_repr": "administrador01",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2025-11-18T10:54:52.828Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "3",
+    "object_repr": "vendedor",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2025-11-18T10:55:09.633Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "3",
+    "object_repr": "vendedor",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2025-11-18T10:55:39.652Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "4",
+    "object_repr": "stocker",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2025-11-18T10:55:47.840Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "4",
+    "object_repr": "stocker",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2025-11-18T18:09:54.230Z",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "3",
+    "object_repr": "ventas",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2025-11-18T18:10:10.845Z",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "2",
+    "object_repr": "stock",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2025-11-18T18:10:20.592Z",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "1",
+    "object_repr": "administradores",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2025-11-18T18:11:06.815Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "2",
+    "object_repr": "administrador01",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2025-11-18T18:11:16.819Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "3",
+    "object_repr": "vendedor",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2025-11-18T18:11:23.444Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "4",
+    "object_repr": "stocker",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2025-11-18T18:12:10.846Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "5",
+    "object_repr": "administrador1",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2025-11-18T18:12:31.625Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "5",
+    "object_repr": "administrador1",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2025-11-18T18:13:04.222Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "6",
+    "object_repr": "stocker",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2025-11-18T18:13:16.725Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "6",
+    "object_repr": "stocker",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2025-11-18T18:13:39.326Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "7",
+    "object_repr": "vendedor",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2025-11-18T18:13:47.650Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "7",
+    "object_repr": "vendedor",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 4,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 4,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 4,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 4,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 5,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 5,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 5,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 5,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 6,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 6,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 6,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 6,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add Producto",
+    "content_type": 7,
+    "codename": "add_producto"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change Producto",
+    "content_type": 7,
+    "codename": "change_producto"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete Producto",
+    "content_type": 7,
+    "codename": "delete_producto"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view Producto",
+    "content_type": 7,
+    "codename": "view_producto"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add Movimiento de Stock",
+    "content_type": 8,
+    "codename": "add_movimientostock"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change Movimiento de Stock",
+    "content_type": 8,
+    "codename": "change_movimientostock"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete Movimiento de Stock",
+    "content_type": 8,
+    "codename": "delete_movimientostock"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view Movimiento de Stock",
+    "content_type": 8,
+    "codename": "view_movimientostock"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add Cliente",
+    "content_type": 9,
+    "codename": "add_cliente"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change Cliente",
+    "content_type": 9,
+    "codename": "change_cliente"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete Cliente",
+    "content_type": 9,
+    "codename": "delete_cliente"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view Cliente",
+    "content_type": 9,
+    "codename": "view_cliente"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add venta",
+    "content_type": 10,
+    "codename": "add_venta"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change venta",
+    "content_type": 10,
+    "codename": "change_venta"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete venta",
+    "content_type": 10,
+    "codename": "delete_venta"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view venta",
+    "content_type": 10,
+    "codename": "view_venta"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add item venta",
+    "content_type": 11,
+    "codename": "add_itemventa"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change item venta",
+    "content_type": 11,
+    "codename": "change_itemventa"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete item venta",
+    "content_type": 11,
+    "codename": "delete_itemventa"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view item venta",
+    "content_type": 11,
+    "codename": "view_itemventa"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add email address",
+    "content_type": 12,
+    "codename": "add_emailaddress"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change email address",
+    "content_type": 12,
+    "codename": "change_emailaddress"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete email address",
+    "content_type": 12,
+    "codename": "delete_emailaddress"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view email address",
+    "content_type": 12,
+    "codename": "view_emailaddress"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 49,
+  "fields": {
+    "name": "Can add email confirmation",
+    "content_type": 13,
+    "codename": "add_emailconfirmation"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 50,
+  "fields": {
+    "name": "Can change email confirmation",
+    "content_type": 13,
+    "codename": "change_emailconfirmation"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 51,
+  "fields": {
+    "name": "Can delete email confirmation",
+    "content_type": 13,
+    "codename": "delete_emailconfirmation"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 52,
+  "fields": {
+    "name": "Can view email confirmation",
+    "content_type": 13,
+    "codename": "view_emailconfirmation"
+  }
+},
+{
+  "model": "auth.group",
+  "pk": 1,
+  "fields": {
+    "name": "administradores",
+    "permissions": [
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      1,
+      2,
+      3,
+      4,
+      9,
+      10,
+      11,
+      12,
+      5,
+      6,
+      7,
+      8,
+      13,
+      14,
+      15,
+      16,
+      33,
+      34,
+      35,
+      36,
+      17,
+      18,
+      19,
+      20,
+      29,
+      30,
+      31,
+      32,
+      25,
+      26,
+      27,
+      28,
+      21,
+      22,
+      23,
+      24,
+      41,
+      42,
+      43,
+      44,
+      37,
+      38,
+      39,
+      40
+    ]
+  }
+},
+{
+  "model": "auth.group",
+  "pk": 2,
+  "fields": {
+    "name": "stock",
+    "permissions": [
+      29,
+      30,
+      31,
+      32,
+      25,
+      26,
+      27,
+      28
+    ]
+  }
+},
+{
+  "model": "auth.group",
+  "pk": 3,
+  "fields": {
+    "name": "ventas",
+    "permissions": [
+      33,
+      34,
+      35,
+      36,
+      41,
+      42,
+      43,
+      44,
+      37,
+      38,
+      39,
+      40
+    ]
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$6RnqTcaijn3tjQRvtzjfuL$xdr3fHBdTsbEIHkfS6lJDCGGVGlWEEzACUbbWdOU9E8=",
+    "last_login": "2025-11-18T18:56:58.917Z",
+    "is_superuser": true,
+    "username": "fernandopintos",
+    "first_name": "",
+    "last_name": "",
+    "email": "fernando.pintos@itscordoba.edu.ar",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-11-18T10:47:29.394Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$UR2E5gny6XBa9OF3ws6IG8$XRqr6KJY/CB2rk8wIj23Bl24Dqipu7ySQi4U09e8o50=",
+    "last_login": "2025-11-18T22:40:56.336Z",
+    "is_superuser": false,
+    "username": "administrador1",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-11-18T18:12:09Z",
+    "groups": [
+      1
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$z9PdKcNOAyoZJ7ei4zPGwH$naf1xCBRFdxG4lhqHarXhauO5TOWIfeepZp1wYb69rU=",
+    "last_login": "2025-11-18T22:45:18.533Z",
+    "is_superuser": false,
+    "username": "stocker",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-11-18T18:13:02Z",
+    "groups": [
+      2
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$p5fauopf8YvegMLDBX9k53$hqnXIzZR0mgMJ1kdwNKSYERUYGIIpZpeglDXauMqo+w=",
+    "last_login": "2025-11-18T22:45:56.989Z",
+    "is_superuser": false,
+    "username": "vendedor",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-11-18T18:13:38Z",
+    "groups": [
+      3
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "productos",
+    "model": "producto"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "productos",
+    "model": "movimientostock"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "clientes",
+    "model": "cliente"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "ventas",
+    "model": "venta"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 11,
+  "fields": {
+    "app_label": "ventas",
+    "model": "itemventa"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 12,
+  "fields": {
+    "app_label": "account",
+    "model": "emailaddress"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 13,
+  "fields": {
+    "app_label": "account",
+    "model": "emailconfirmation"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "54ntfzudf6ilrmpgs1pnb965b4i28204",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSG8hoJL934DGWCQqoGktCvjv2uTLnR7zzn3xQJuaw3boCXMmZ3ZxE6_W8T0oLaDfMd26zz1ti5z5LvCDzr4tWd6Xg7376DiqN9aGumlsN5PGbOXToFBDUVqIGd0AiQsCBitNRSNAm9IOJGEU7ZE8MTeH8FSN0w:1vLUST:lD7FvyNlQSjLJ4nhFvByNKrYiR9GLYbsPkWqJWwBYQo",
+    "expire_date": "2025-12-02T22:45:57.000Z"
+  }
+},
+{
+  "model": "productos.producto",
+  "pk": 1,
+  "fields": {
+    "sku": "PROD-33400",
+    "nombre": "Palo Grays",
+    "descripcion": "palo de hockey sobre cesped",
+    "precio": "250000.00",
+    "stock": 4,
+    "stock_minimo": 5,
+    "imagen": "productos/13c24196-94e4-40b6-9130-229c7fe45ea8.jpg",
+    "fecha_creacion": "2025-11-18T12:20:26.430Z",
+    "fecha_modificacion": "2025-11-18T19:38:39.982Z"
+  }
+},
+{
+  "model": "productos.producto",
+  "pk": 2,
+  "fields": {
+    "sku": "PROD-25581",
+    "nombre": "Palo TK",
+    "descripcion": "palo de hockey sobre cesped",
+    "precio": "300000.00",
+    "stock": 2,
+    "stock_minimo": 5,
+    "imagen": "productos/980190f0-5cbc-4477-9193-d56b49987fb7.webp",
+    "fecha_creacion": "2025-11-18T14:44:48.220Z",
+    "fecha_modificacion": "2025-11-18T21:55:15.867Z"
+  }
+},
+{
+  "model": "productos.producto",
+  "pk": 3,
+  "fields": {
+    "sku": "PROD-92629",
+    "nombre": "Palo de Hockey Voodoo",
+    "descripcion": "palo de hockey sobre cesped",
+    "precio": "350000.00",
+    "stock": 4,
+    "stock_minimo": 5,
+    "imagen": "productos/46353815-5642-4f0e-a017-3dccd38ea63c.webp",
+    "fecha_creacion": "2025-11-18T19:03:32.298Z",
+    "fecha_modificacion": "2025-11-18T19:39:20.909Z"
+  }
+},
+{
+  "model": "productos.producto",
+  "pk": 4,
+  "fields": {
+    "sku": "PROD-74180",
+    "nombre": "Palo Balling",
+    "descripcion": "palo de hockey arquero sobre cesped",
+    "precio": "285000.00",
+    "stock": 2,
+    "stock_minimo": 5,
+    "imagen": "productos/97dda26f-b432-4d09-8204-b8870509d8cc.webp",
+    "fecha_creacion": "2025-11-18T19:05:42.877Z",
+    "fecha_modificacion": "2025-11-18T21:08:31.686Z"
+  }
+},
+{
+  "model": "productos.producto",
+  "pk": 5,
+  "fields": {
+    "sku": "PROD-84405",
+    "nombre": "Palo Osaka",
+    "descripcion": "palo de hockey sobre cesped",
+    "precio": "450000.00",
+    "stock": 3,
+    "stock_minimo": 5,
+    "imagen": "productos/bf0b6d54-2bc7-423f-a55c-b39923e5565a.jpg",
+    "fecha_creacion": "2025-11-18T19:06:24.267Z",
+    "fecha_modificacion": "2025-11-18T20:45:28.453Z"
+  }
+},
+{
+  "model": "productos.producto",
+  "pk": 6,
+  "fields": {
+    "sku": "PROD-84460",
+    "nombre": "Palo Simbra",
+    "descripcion": "palo de hockey sobre cesped",
+    "precio": "260000.00",
+    "stock": 0,
+    "stock_minimo": 5,
+    "imagen": "productos/ec9c57a7-e59d-40a9-b601-636a4f6ce999.webp",
+    "fecha_creacion": "2025-11-18T19:07:08.556Z",
+    "fecha_modificacion": "2025-11-18T19:40:44.318Z"
+  }
+},
+{
+  "model": "productos.producto",
+  "pk": 7,
+  "fields": {
+    "sku": "PROD-63923",
+    "nombre": "Palo Kilka",
+    "descripcion": "palo de hockey sobre cesped",
+    "precio": "320000.00",
+    "stock": 5,
+    "stock_minimo": 5,
+    "imagen": "productos/1bfb7d19-b6e8-4993-8022-0d2aa147507c.webp",
+    "fecha_creacion": "2025-11-18T19:08:04.512Z",
+    "fecha_modificacion": "2025-11-18T19:34:10.981Z"
+  }
+},
+{
+  "model": "productos.producto",
+  "pk": 8,
+  "fields": {
+    "sku": "PROD-36363",
+    "nombre": "Palo TK",
+    "descripcion": "palo de hockey sobre cesped",
+    "precio": "285000.00",
+    "stock": 6,
+    "stock_minimo": 5,
+    "imagen": "productos/1a25816f-7d25-4a6e-8c45-8c886913928d.webp",
+    "fecha_creacion": "2025-11-18T19:09:00.151Z",
+    "fecha_modificacion": "2025-11-18T19:09:00.151Z"
+  }
+},
+{
+  "model": "productos.producto",
+  "pk": 9,
+  "fields": {
+    "sku": "PROD-38022",
+    "nombre": "Palo TK Arquero",
+    "descripcion": "palo de hockey arquero sobre cesped",
+    "precio": "386000.00",
+    "stock": 7,
+    "stock_minimo": 5,
+    "imagen": "productos/721fcb75-6225-4d03-bc6a-dcff1fae8ec4.webp",
+    "fecha_creacion": "2025-11-18T19:09:52.893Z",
+    "fecha_modificacion": "2025-11-18T21:57:25.333Z"
+  }
+},
+{
+  "model": "productos.producto",
+  "pk": 11,
+  "fields": {
+    "sku": "PROD-92722",
+    "nombre": "Equipo de Arquero de Hockey",
+    "descripcion": "Equipo completo de arquero de hockey sobre cesped",
+    "precio": "1500000.00",
+    "stock": 12,
+    "stock_minimo": 5,
+    "imagen": "productos/40761860-400b-4d5d-bbf8-46797e32ba47.webp",
+    "fecha_creacion": "2025-11-18T19:12:10.253Z",
+    "fecha_modificacion": "2025-11-18T21:55:36.888Z"
+  }
+},
+{
+  "model": "productos.producto",
+  "pk": 12,
+  "fields": {
+    "sku": "PROD-97890",
+    "nombre": "Palo de Hockey Voodoo",
+    "descripcion": "palo de hockey sobre cesped",
+    "precio": "250000.00",
+    "stock": 5,
+    "stock_minimo": 5,
+    "imagen": "productos/6d31ffe0-d17e-48b1-aacb-470c7cab61ad.webp",
+    "fecha_creacion": "2025-11-18T22:43:02.472Z",
+    "fecha_modificacion": "2025-11-18T22:43:02.472Z"
+  }
+},
+{
+  "model": "productos.movimientostock",
+  "pk": 1,
+  "fields": {
+    "producto": 1,
+    "tipo": "entrada",
+    "cantidad": 6,
+    "fecha": "2025-11-18T12:20:26.588Z",
+    "motivo": "Stock inicial al crear el producto",
+    "usuario": "administrador01"
+  }
+},
+{
+  "model": "productos.movimientostock",
+  "pk": 2,
+  "fields": {
+    "producto": 1,
+    "tipo": "salida",
+    "cantidad": 1,
+    "fecha": "2025-11-18T12:22:57.450Z",
+    "motivo": "Venta VENT-97036",
+    "usuario": "administrador01"
+  }
+},
+{
+  "model": "productos.movimientostock",
+  "pk": 3,
+  "fields": {
+    "producto": 2,
+    "tipo": "entrada",
+    "cantidad": 7,
+    "fecha": "2025-11-18T14:44:48.369Z",
+    "motivo": "Stock inicial al crear el producto",
+    "usuario": "administrador01"
+  }
+},
+{
+  "model": "productos.movimientostock",
+  "pk": 4,
+  "fields": {
+    "producto": 3,
+    "tipo": "entrada",
+    "cantidad": 6,
+    "fecha": "2025-11-18T19:03:32.352Z",
+    "motivo": "Stock inicial al crear el producto",
+    "usuario": "administrador1"
+  }
+},
+{
+  "model": "productos.movimientostock",
+  "pk": 5,
+  "fields": {
+    "producto": 4,
+    "tipo": "entrada",
+    "cantidad": 4,
+    "fecha": "2025-11-18T19:05:42.932Z",
+    "motivo": "Stock inicial al crear el producto",
+    "usuario": "administrador1"
+  }
+},
+{
+  "model": "productos.movimientostock",
+  "pk": 6,
+  "fields": {
+    "producto": 5,
+    "tipo": "entrada",
+    "cantidad": 8,
+    "fecha": "2025-11-18T19:06:24.361Z",
+    "motivo": "Stock inicial al crear el producto",
+    "usuario": "administrador1"
+  }
+},
+{
+  "model": "productos.movimientostock",
+  "pk": 7,
+  "fields": {
+    "producto": 6,
+    "tipo": "entrada",
+    "cantidad": 4,
+    "fecha": "2025-11-18T19:07:08.639Z",
+    "motivo": "Stock inicial al crear el producto",
+    "usuario": "administrador1"
+  }
+},
+{
+  "model": "productos.movimientostock",
+  "pk": 8,
+  "fields": {
+    "producto": 7,
+    "tipo": "entrada",
+    "cantidad": 7,
+    "fecha": "2025-11-18T19:08:04.598Z",
+    "motivo": "Stock inicial al crear el producto",
+    "usuario": "administrador1"
+  }
+},
+{
+  "model": "productos.movimientostock",
+  "pk": 9,
+  "fields": {
+    "producto": 8,
+    "tipo": "entrada",
+    "cantidad": 6,
+    "fecha": "2025-11-18T19:09:00.213Z",
+    "motivo": "Stock inicial al crear el producto",
+    "usuario": "administrador1"
+  }
+},
+{
+  "model": "productos.movimientostock",
+  "pk": 10,
+  "fields": {
+    "producto": 9,
+    "tipo": "entrada",
+    "cantidad": 2,
+    "fecha": "2025-11-18T19:09:52.939Z",
+    "motivo": "Stock inicial al crear el producto",
+    "usuario": "administrador1"
+  }
+},
+{
+  "model": "productos.movimientostock",
+  "pk": 12,
+  "fields": {
+    "producto": 11,
+    "tipo": "entrada",
+    "cantidad": 2,
+    "fecha": "2025-11-18T19:12:10.356Z",
+    "motivo": "Stock inicial al crear el producto",
+    "usuario": "administrador1"
+  }
+},
+{
+  "model": "productos.movimientostock",
+  "pk": 13,
+  "fields": {
+    "producto": 6,
+    "tipo": "salida",
+    "cantidad": 2,
+    "fecha": "2025-11-18T19:33:19.784Z",
+    "motivo": "Venta VENT-90953",
+    "usuario": "administrador1"
+  }
+},
+{
+  "model": "productos.movimientostock",
+  "pk": 15,
+  "fields": {
+    "producto": 4,
+    "tipo": "salida",
+    "cantidad": 1,
+    "fecha": "2025-11-18T19:33:41.196Z",
+    "motivo": "Venta VENT-36628",
+    "usuario": "administrador1"
+  }
+},
+{
+  "model": "productos.movimientostock",
+  "pk": 16,
+  "fields": {
+    "producto": 5,
+    "tipo": "salida",
+    "cantidad": 1,
+    "fecha": "2025-11-18T19:33:41.199Z",
+    "motivo": "Venta VENT-36628",
+    "usuario": "administrador1"
+  }
+},
+{
+  "model": "productos.movimientostock",
+  "pk": 17,
+  "fields": {
+    "producto": 7,
+    "tipo": "salida",
+    "cantidad": 2,
+    "fecha": "2025-11-18T19:34:10.983Z",
+    "motivo": "Venta VENT-34805",
+    "usuario": "administrador1"
+  }
+},
+{
+  "model": "productos.movimientostock",
+  "pk": 18,
+  "fields": {
+    "producto": 9,
+    "tipo": "salida",
+    "cantidad": 1,
+    "fecha": "2025-11-18T19:34:10.987Z",
+    "motivo": "Venta VENT-34805",
+    "usuario": "administrador1"
+  }
+},
+{
+  "model": "productos.movimientostock",
+  "pk": 19,
+  "fields": {
+    "producto": 11,
+    "tipo": "salida",
+    "cantidad": 1,
+    "fecha": "2025-11-18T19:37:22.822Z",
+    "motivo": "Venta VENT-82722",
+    "usuario": "administrador1"
+  }
+},
+{
+  "model": "productos.movimientostock",
+  "pk": 20,
+  "fields": {
+    "producto": 5,
+    "tipo": "salida",
+    "cantidad": 2,
+    "fecha": "2025-11-18T19:38:39.981Z",
+    "motivo": "Venta VENT-70023",
+    "usuario": "administrador1"
+  }
+},
+{
+  "model": "productos.movimientostock",
+  "pk": 21,
+  "fields": {
+    "producto": 1,
+    "tipo": "salida",
+    "cantidad": 1,
+    "fecha": "2025-11-18T19:38:39.992Z",
+    "motivo": "Venta VENT-70023",
+    "usuario": "administrador1"
+  }
+},
+{
+  "model": "productos.movimientostock",
+  "pk": 22,
+  "fields": {
+    "producto": 3,
+    "tipo": "salida",
+    "cantidad": 2,
+    "fecha": "2025-11-18T19:39:20.911Z",
+    "motivo": "Venta VENT-74642",
+    "usuario": "administrador1"
+  }
+},
+{
+  "model": "productos.movimientostock",
+  "pk": 23,
+  "fields": {
+    "producto": 6,
+    "tipo": "salida",
+    "cantidad": 1,
+    "fecha": "2025-11-18T19:39:20.915Z",
+    "motivo": "Venta VENT-74642",
+    "usuario": "administrador1"
+  }
+},
+{
+  "model": "productos.movimientostock",
+  "pk": 24,
+  "fields": {
+    "producto": 11,
+    "tipo": "salida",
+    "cantidad": 1,
+    "fecha": "2025-11-18T19:39:53.789Z",
+    "motivo": "Venta VENT-87143",
+    "usuario": "administrador1"
+  }
+},
+{
+  "model": "productos.movimientostock",
+  "pk": 25,
+  "fields": {
+    "producto": 9,
+    "tipo": "salida",
+    "cantidad": 1,
+    "fecha": "2025-11-18T19:39:53.793Z",
+    "motivo": "Venta VENT-87143",
+    "usuario": "administrador1"
+  }
+},
+{
+  "model": "productos.movimientostock",
+  "pk": 27,
+  "fields": {
+    "producto": 6,
+    "tipo": "salida",
+    "cantidad": 1,
+    "fecha": "2025-11-18T19:40:44.320Z",
+    "motivo": "Venta VENT-97547",
+    "usuario": "administrador1"
+  }
+},
+{
+  "model": "productos.movimientostock",
+  "pk": 29,
+  "fields": {
+    "producto": 2,
+    "tipo": "salida",
+    "cantidad": 3,
+    "fecha": "2025-11-18T19:41:04.079Z",
+    "motivo": "Venta VENT-23504",
+    "usuario": "administrador1"
+  }
+},
+{
+  "model": "productos.movimientostock",
+  "pk": 30,
+  "fields": {
+    "producto": 11,
+    "tipo": "entrada",
+    "cantidad": 3,
+    "fecha": "2025-11-18T20:00:13.307Z",
+    "motivo": "",
+    "usuario": "administrador1"
+  }
+},
+{
+  "model": "productos.movimientostock",
+  "pk": 31,
+  "fields": {
+    "producto": 11,
+    "tipo": "entrada",
+    "cantidad": 10,
+    "fecha": "2025-11-18T20:00:49.013Z",
+    "motivo": "",
+    "usuario": "administrador1"
+  }
+},
+{
+  "model": "productos.movimientostock",
+  "pk": 32,
+  "fields": {
+    "producto": 5,
+    "tipo": "salida",
+    "cantidad": 2,
+    "fecha": "2025-11-18T20:45:28.480Z",
+    "motivo": "Venta VENT-77340",
+    "usuario": "administrador1"
+  }
+},
+{
+  "model": "productos.movimientostock",
+  "pk": 36,
+  "fields": {
+    "producto": 4,
+    "tipo": "salida",
+    "cantidad": 1,
+    "fecha": "2025-11-18T21:08:31.716Z",
+    "motivo": "Venta VENT-27739",
+    "usuario": "administrador1"
+  }
+},
+{
+  "model": "productos.movimientostock",
+  "pk": 37,
+  "fields": {
+    "producto": 2,
+    "tipo": "salida",
+    "cantidad": 2,
+    "fecha": "2025-11-18T21:55:16.193Z",
+    "motivo": "Venta VENT-91948",
+    "usuario": "administrador1"
+  }
+},
+{
+  "model": "productos.movimientostock",
+  "pk": 38,
+  "fields": {
+    "producto": 11,
+    "tipo": "salida",
+    "cantidad": 1,
+    "fecha": "2025-11-18T21:55:36.891Z",
+    "motivo": "Venta VENT-96588",
+    "usuario": "administrador1"
+  }
+},
+{
+  "model": "productos.movimientostock",
+  "pk": 39,
+  "fields": {
+    "producto": 9,
+    "tipo": "entrada",
+    "cantidad": 7,
+    "fecha": "2025-11-18T21:57:25.331Z",
+    "motivo": "",
+    "usuario": "administrador1"
+  }
+},
+{
+  "model": "productos.movimientostock",
+  "pk": 40,
+  "fields": {
+    "producto": 12,
+    "tipo": "entrada",
+    "cantidad": 5,
+    "fecha": "2025-11-18T22:43:02.522Z",
+    "motivo": "Stock inicial al crear el producto",
+    "usuario": "administrador1"
+  }
+},
+{
+  "model": "clientes.cliente",
+  "pk": 1,
+  "fields": {
+    "nombre": "Fernando",
+    "apellido": "pintos",
+    "numero_documento": "26793145",
+    "email": "fernando.pintos@itscordoba.edu.ar",
+    "telefono": "3516839313",
+    "direccion": "armada argentina",
+    "fecha_creacion": "2025-11-18T12:22:13.687Z",
+    "fecha_modificacion": "2025-11-18T12:22:13.687Z"
+  }
+},
+{
+  "model": "clientes.cliente",
+  "pk": 2,
+  "fields": {
+    "nombre": "Juan",
+    "apellido": "gonzales",
+    "numero_documento": "34098890",
+    "email": "diegomaradona@gmail.com",
+    "telefono": "3811234567",
+    "direccion": "Av. roque saenz peña 25",
+    "fecha_creacion": "2025-11-18T19:15:23.613Z",
+    "fecha_modificacion": "2025-11-18T19:15:23.613Z"
+  }
+},
+{
+  "model": "clientes.cliente",
+  "pk": 3,
+  "fields": {
+    "nombre": "Maria",
+    "apellido": "López",
+    "numero_documento": "22345678",
+    "email": "maria.lopez@yahoo.com",
+    "telefono": "+54 11 5032-9981",
+    "direccion": "La Plata 2587 La Plata",
+    "fecha_creacion": "2025-11-18T19:17:32.162Z",
+    "fecha_modificacion": "2025-11-18T19:17:32.162Z"
+  }
+},
+{
+  "model": "clientes.cliente",
+  "pk": 4,
+  "fields": {
+    "nombre": "Federico",
+    "apellido": "González",
+    "numero_documento": "25478965",
+    "email": "f.gonzalez@hotmail.com",
+    "telefono": "+54 11 6789-2245",
+    "direccion": "Av. San Martín 1200, Mar del Plata",
+    "fecha_creacion": "2025-11-18T19:19:08.468Z",
+    "fecha_modificacion": "2025-11-18T19:19:08.468Z"
+  }
+},
+{
+  "model": "clientes.cliente",
+  "pk": 6,
+  "fields": {
+    "nombre": "Diego",
+    "apellido": "Ramírez",
+    "numero_documento": "27984512",
+    "email": "diego.ramirez@outlook.com",
+    "telefono": "+54 11 4421-1109",
+    "direccion": "Av. Mitre 2022, Avellaneda, Buenos Aires",
+    "fecha_creacion": "2025-11-18T19:22:17.661Z",
+    "fecha_modificacion": "2025-11-18T19:22:17.661Z"
+  }
+},
+{
+  "model": "clientes.cliente",
+  "pk": 7,
+  "fields": {
+    "nombre": "Sofía",
+    "apellido": "Medina",
+    "numero_documento": "30124578",
+    "email": "sofia.medina@gmail.com",
+    "telefono": "+54 261 754-2011",
+    "direccion": "Calle Independencia 675, Mendoza",
+    "fecha_creacion": "2025-11-18T19:23:42.420Z",
+    "fecha_modificacion": "2025-11-18T19:23:42.420Z"
+  }
+},
+{
+  "model": "clientes.cliente",
+  "pk": 10,
+  "fields": {
+    "nombre": "Ariel",
+    "apellido": "Torres",
+    "numero_documento": "33987541",
+    "email": "ariel.torres@outlook.com",
+    "telefono": "+54 11 4872-1988",
+    "direccion": "Suipacha 550, CABA",
+    "fecha_creacion": "2025-11-18T19:27:55.134Z",
+    "fecha_modificacion": "2025-11-18T19:27:55.134Z"
+  }
+},
+{
+  "model": "clientes.cliente",
+  "pk": 11,
+  "fields": {
+    "nombre": "Valentina",
+    "apellido": "Ríos",
+    "numero_documento": "35100245",
+    "email": "vale.rios@gmail.com",
+    "telefono": "+54 299 501-7782",
+    "direccion": "Av. Olascoaga 1202, Neuquén",
+    "fecha_creacion": "2025-11-18T19:29:02.530Z",
+    "fecha_modificacion": "2025-11-18T19:29:02.530Z"
+  }
+},
+{
+  "model": "clientes.cliente",
+  "pk": 12,
+  "fields": {
+    "nombre": "Nicolás",
+    "apellido": "Herrera",
+    "numero_documento": "36845219",
+    "email": "nico.herrera@mail.com",
+    "telefono": "+54 11 5244-6721",
+    "direccion": "Av. La Plata 890, CABA",
+    "fecha_creacion": "2025-11-18T19:30:16.289Z",
+    "fecha_modificacion": "2025-11-18T19:30:16.289Z"
+  }
+},
+{
+  "model": "clientes.cliente",
+  "pk": 13,
+  "fields": {
+    "nombre": "Camila",
+    "apellido": "Soria",
+    "numero_documento": "37984521",
+    "email": "camila.soria@gmail.com",
+    "telefono": "+54 381 489-9021",
+    "direccion": "Av. Aconquija 1900, Yerba Buena, Tucumán",
+    "fecha_creacion": "2025-11-18T19:31:36.175Z",
+    "fecha_modificacion": "2025-11-18T19:31:36.175Z"
+  }
+},
+{
+  "model": "ventas.venta",
+  "pk": 2,
+  "fields": {
+    "sku": "VENT-90953",
+    "cliente": 7,
+    "fecha": "2025-11-18",
+    "total": "528000.00"
+  }
+},
+{
+  "model": "ventas.venta",
+  "pk": 4,
+  "fields": {
+    "sku": "VENT-34805",
+    "cliente": 4,
+    "fecha": "2025-11-18",
+    "total": "1026000.00"
+  }
+},
+{
+  "model": "ventas.venta",
+  "pk": 5,
+  "fields": {
+    "sku": "VENT-82722",
+    "cliente": 13,
+    "fecha": "2025-11-18",
+    "total": "1500000.00"
+  }
+},
+{
+  "model": "ventas.venta",
+  "pk": 6,
+  "fields": {
+    "sku": "VENT-70023",
+    "cliente": 10,
+    "fecha": "2025-11-18",
+    "total": "1150000.00"
+  }
+},
+{
+  "model": "ventas.venta",
+  "pk": 8,
+  "fields": {
+    "sku": "VENT-87143",
+    "cliente": 6,
+    "fecha": "2025-11-18",
+    "total": "1886000.00"
+  }
+},
+{
+  "model": "ventas.venta",
+  "pk": 9,
+  "fields": {
+    "sku": "VENT-98897",
+    "cliente": 12,
+    "fecha": "2025-11-18",
+    "total": "24000.00"
+  }
+},
+{
+  "model": "ventas.venta",
+  "pk": 10,
+  "fields": {
+    "sku": "VENT-97547",
+    "cliente": 11,
+    "fecha": "2025-11-18",
+    "total": "268000.00"
+  }
+},
+{
+  "model": "ventas.venta",
+  "pk": 12,
+  "fields": {
+    "sku": "VENT-77340",
+    "cliente": 4,
+    "fecha": "2025-11-18",
+    "total": "916000.00"
+  }
+},
+{
+  "model": "ventas.venta",
+  "pk": 15,
+  "fields": {
+    "sku": "VENT-91948",
+    "cliente": 12,
+    "fecha": "2025-11-18",
+    "total": "600000.00"
+  }
+},
+{
+  "model": "ventas.venta",
+  "pk": 16,
+  "fields": {
+    "sku": "VENT-96588",
+    "cliente": 13,
+    "fecha": "2025-11-18",
+    "total": "1500000.00"
+  }
+},
+{
+  "model": "ventas.itemventa",
+  "pk": 2,
+  "fields": {
+    "venta": 2,
+    "producto": 6,
+    "cantidad": 2,
+    "precio_unitario": "260000.00",
+    "subtotal": "520000.00"
+  }
+},
+{
+  "model": "ventas.itemventa",
+  "pk": 6,
+  "fields": {
+    "venta": 4,
+    "producto": 7,
+    "cantidad": 2,
+    "precio_unitario": "320000.00",
+    "subtotal": "640000.00"
+  }
+},
+{
+  "model": "ventas.itemventa",
+  "pk": 7,
+  "fields": {
+    "venta": 4,
+    "producto": 9,
+    "cantidad": 1,
+    "precio_unitario": "386000.00",
+    "subtotal": "386000.00"
+  }
+},
+{
+  "model": "ventas.itemventa",
+  "pk": 8,
+  "fields": {
+    "venta": 5,
+    "producto": 11,
+    "cantidad": 1,
+    "precio_unitario": "1500000.00",
+    "subtotal": "1500000.00"
+  }
+},
+{
+  "model": "ventas.itemventa",
+  "pk": 9,
+  "fields": {
+    "venta": 6,
+    "producto": 5,
+    "cantidad": 2,
+    "precio_unitario": "450000.00",
+    "subtotal": "900000.00"
+  }
+},
+{
+  "model": "ventas.itemventa",
+  "pk": 10,
+  "fields": {
+    "venta": 6,
+    "producto": 1,
+    "cantidad": 1,
+    "precio_unitario": "250000.00",
+    "subtotal": "250000.00"
+  }
+},
+{
+  "model": "ventas.itemventa",
+  "pk": 13,
+  "fields": {
+    "venta": 8,
+    "producto": 11,
+    "cantidad": 1,
+    "precio_unitario": "1500000.00",
+    "subtotal": "1500000.00"
+  }
+},
+{
+  "model": "ventas.itemventa",
+  "pk": 14,
+  "fields": {
+    "venta": 8,
+    "producto": 9,
+    "cantidad": 1,
+    "precio_unitario": "386000.00",
+    "subtotal": "386000.00"
+  }
+},
+{
+  "model": "ventas.itemventa",
+  "pk": 16,
+  "fields": {
+    "venta": 10,
+    "producto": 6,
+    "cantidad": 1,
+    "precio_unitario": "260000.00",
+    "subtotal": "260000.00"
+  }
+},
+{
+  "model": "ventas.itemventa",
+  "pk": 19,
+  "fields": {
+    "venta": 12,
+    "producto": 5,
+    "cantidad": 2,
+    "precio_unitario": "450000.00",
+    "subtotal": "900000.00"
+  }
+},
+{
+  "model": "ventas.itemventa",
+  "pk": 25,
+  "fields": {
+    "venta": 15,
+    "producto": 2,
+    "cantidad": 2,
+    "precio_unitario": "300000.00",
+    "subtotal": "600000.00"
+  }
+},
+{
+  "model": "ventas.itemventa",
+  "pk": 26,
+  "fields": {
+    "venta": 16,
+    "producto": 11,
+    "cantidad": 1,
+    "precio_unitario": "1500000.00",
+    "subtotal": "1500000.00"
+  }
+}
+]
