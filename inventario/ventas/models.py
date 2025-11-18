@@ -7,7 +7,7 @@ import string
 
 class Venta(models.Model):
     sku = models.CharField('sku', max_length=20, unique=True, editable=True,  help_text="Código único de identificación del producto", blank=True, null=True)
-    cliente = models.ForeignKey(Cliente, on_delete=models.PROTECT)
+    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
     fecha = models.DateField(auto_now_add=True)
     total = models.DecimalField(max_digits=10, decimal_places=2,)
 
@@ -35,7 +35,7 @@ class Venta(models.Model):
 
 class ItemVenta(models.Model):
     venta = models.ForeignKey(Venta, related_name='items', on_delete=models.CASCADE)
-    producto = models.ForeignKey(Producto, on_delete=models.PROTECT)
+    producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
     cantidad = models.PositiveIntegerField()
     precio_unitario = models.DecimalField(max_digits=10, decimal_places=2)
     subtotal = models.DecimalField(max_digits=10, decimal_places=2)

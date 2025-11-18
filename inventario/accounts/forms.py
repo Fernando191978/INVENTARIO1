@@ -7,8 +7,8 @@ class SignUpForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ('username', 'password1', 'password2')  # Quitamos 'captcha' de aquí
+        fields = ('username', 'password1', 'password2') 
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['captcha'].label = "Verificación de seguridad"
+        

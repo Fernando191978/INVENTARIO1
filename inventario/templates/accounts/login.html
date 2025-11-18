@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,28 +8,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .dashboard-card {
-            transition: transform 0.2s;
-            border: none;
-            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-            border-left: 4px solid transparent;
-            border-right: 4px solid transparent;
-        }
-        .dashboard-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-        }
-        .dashboard-card.ventas {
-            border-left-color: #198754;
-            border-right-color: #198754;
-        }
-        .dashboard-card.productos {
-            border-left-color: #030303;
-            border-right-color: #030303;
-        }
-        .dashboard-card.clientes {
-            border-left-color: #0d6efd;
-            border-right-color: #0d6efd;
+
+        .hero-section {
+            background: url("{% static 'images/logo.jpg' %}") no-repeat center center / cover;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            color: rgb(57, 185, 236);
         }
         .navbar-custom {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -53,138 +39,38 @@
             </a>
         </div>
     </nav>
-
-    <!-- Mensajes -->
-    <div class="container-fluid mt-3">
-        <div class="row">
-            <div class="col-12">
-                {% if messages %}
-                    {% for message in messages %}
-                        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-                            <div class="d-flex align-items-center">
-                                {% if message.tags == 'success' %}
-                                    <i class="fas fa-check-circle me-2"></i>
-                                {% elif message.tags == 'error' %}
-                                    <i class="fas fa-exclamation-triangle me-2"></i>
-                                {% elif message.tags == 'warning' %}
-                                    <i class="fas fa-exclamation-circle me-2"></i>
-                                {% elif message.tags == 'info' %}
-                                    <i class="fas fa-info-circle me-2"></i>
-                                {% endif %}
-                                <div class="flex-grow-1">{{ message }}</div>
-                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    <section class="hero-section">  <!-- Formulario de Login Centrado y Enmarcado -->
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-5">
+                    <div class="login-card p-4 rounded shadow-sm" style="background: #667eea;">
+                        <h2 class="text-center mb-4 text-dark">Iniciar Sesión</h2>
+                            <form method="post" action="{% url 'accounts:login' %}">
+                                          {% csrf_token %}                    
+                            <div class="mb-3">
+                                <label for="id_username" class="form-label">Usuario</label>
+                                <input type="text" name="username" class="form-control" id="id_username" 
+                                    placeholder="Ingresa tu usuario" required>
                             </div>
+                    
+                            <div class="mb-3">
+                                <label for="id_password" class="form-label">Contraseña</label>
+                                <input type="password" name="password" class="form-control" 
+                                    id="id_password" placeholder="Ingresa tu contraseña" required>
+                            </div>                    
+                            <button type="submit" class="btn btn-primary w-100 py-2 mb-3">
+                                <i class="fas fa-sign-in-alt me-2"></i>Ingresar al Sistema
+                            </button>
+                    
+                            <div class="text-center">
+                                <small style="color: white;">
+                                    ¿Problemas para acceder? Contacta al administrador
+                            </small>
                         </div>
-                    {% endfor %}
-                {% endif %}
-            </div>
-        </div>
-    </div>
-
-    <!-- Contenido Principal -->
-    <div class="container-fluid mt-4">
-        <!-- Header -->
-        <div class="row mb-4">
-            <div class="col-12">
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="text-center flex-grow-1">
-                        <h1 class="h2 text-dark">
-                            <i class="fas fa-tachometer-alt me-2"></i>Menu Principal
-                        </h1>
-                        <p class="text-muted mb-0">Bienvenido al sistema de gestión de inventario</p>
-                    </div>
-                    <div class="text-end">
-                        <small class="text-muted">Último acceso: {% now "d/m/Y H:i" %}</small>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
-
-        <!-- Tarjetas de Módulos -->
-        <div class="row">
-            <!-- Módulo Ventas -->
-            {% if perms.ventas.view_venta or user.is_superuser %}
-            <div class="col-xl-4 col-md-6 mb-4">
-                <div class="card dashboard-card ventas h-100">
-                    <div class="card-body text-center p-4">
-                        <div class="module-icon text-success">
-                            <i class="fas fa-shopping-cart"></i>
-                        </div>
-                        <h5 class="card-title fw-bold">Módulo de Ventas</h5>
-                        <p class="card-text text-muted">
-                            Gestiona ventas, transacciones y facturación de clientes
-                        </p>
-                        <div class="mt-3">
-                            <span class="badge bg-success">Ventas</span>
-                            <span class="badge bg-success">Clientes</span>
-                            <span class="badge bg-success">Facturación</span>
-                        </div>
-                    </div>
-                    <div class="card-footer bg-transparent border-0 pb-3">
-                        <a href="{% url 'ventas:venta_list' %}" class="btn btn-success w-100 py-2">
-                            <i class="fas fa-arrow-right me-1"></i> Acceder al Módulo
-                        </a>
-                    </div>
-                </div>
-            </div>
-            {% endif %}
-
-            <!-- Módulo Productos -->
-            {% if perms.productos.view_producto or user.is_superuser %}
-            <div class="col-xl-4 col-md-6 mb-4">
-                <div class="card dashboard-card productos h-100">
-                    <div class="card-body text-center p-4">
-                        <div class="module-icon text-dark">
-                            <i class="fas fa-boxes"></i>
-                        </div>
-                        <h5 class="card-title fw-bold">Módulo de Productos</h5>
-                        <p class="card-text text-muted">
-                            Administra inventario, stock, categorías y movimientos
-                        </p>
-                        <div class="mt-3">
-                            <span class="badge bg-dark">Inventario</span>
-                            <span class="badge bg-dark">Stock</span>
-                            <span class="badge bg-dark">Categorías</span>
-                        </div>
-                    </div>
-                    <div class="card-footer bg-transparent border-0 pb-3">
-                        <a href="{% url 'productos:producto_list' %}" class="btn btn-dark w-100 py-2">
-                            <i class="fas fa-arrow-right me-1"></i> Acceder al Módulo
-                        </a>
-                    </div>
-                </div>
-            </div>
-            {% endif %}
-
-            <!-- Módulo Clientes -->
-            {% if perms.clientes.view_cliente or user.is_superuser %}
-            <div class="col-xl-4 col-md-6 mb-4">
-                <div class="card dashboard-card clientes h-100">
-                    <div class="card-body text-center p-4">
-                        <div class="module-icon text-primary">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h5 class="card-title fw-bold">Módulo de Clientes</h5>
-                        <p class="card-text text-muted">
-                            Gestiona tu base de datos de clientes y contactos
-                        </p>
-                        <div class="mt-3">
-                            <span class="badge bg-primary">Clientes</span>
-                            <span class="badge bg-primary">Contactos</span>
-                            <span class="badge bg-primary">Direcciones</span>
-                        </div>
-                    </div>
-                    <div class="card-footer bg-transparent border-0 pb-3">
-                        <a href="{% url 'clientes:cliente_list' %}" class="btn btn-primary w-100 py-2">
-                            <i class="fas fa-arrow-right me-1"></i> Acceder al Módulo
-                        </a>
-                    </div>
-                </div>
-            </div>
-            {% endif %}
-
-        </div>
-
         <!-- Footer -->
         <div class="row mt-5">
             <div class="col-12 text-center">
@@ -192,33 +78,9 @@
                 <p class="text-muted small">
                     <i class="fas fa-copyright me-1"></i> 
                     Sistema de Inventario - {% now "Y" %} 
-                    | Usuario: {{ user.username }}
-                    | {% now "d/m/Y H:i" %}
                 </p>
             </div>
         </div>
-    </div>
-
+    </section> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     
-    <script>
-        // Efectos interactivos
-        document.addEventListener('DOMContentLoaded', function() {
-            // Tooltips para badges
-            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-                return new bootstrap.Tooltip(tooltipTriggerEl)
-            });
-            
-            // Auto-ocultar alerts después de 5 segundos
-            setTimeout(function() {
-                var alerts = document.querySelectorAll('.alert');
-                alerts.forEach(function(alert) {
-                    var bsAlert = new bootstrap.Alert(alert);
-                    bsAlert.close();
-                });
-            }, 5000);
-        });
-    </script>
-</body>
-</html>

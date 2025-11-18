@@ -22,13 +22,13 @@ from django.contrib.auth.decorators import login_required
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 from accounts.views import login_view
+from . import view
 
 urlpatterns = [
      # Página principal (index) - http://127.0.0.1:8000/
     path('', TemplateView.as_view(template_name='index.html'), name='index'),
-    path('accounts/', login_view, name='login'),
     # Dashboard - http://127.0.0.1:8000/dashboard/
-    path('dashboard/', login_required(TemplateView.as_view(template_name='dashboard.html')), name='dashboard'),
+    path('dashboard/', view.dashboard_view, name='dashboard'),
     path('admin/', admin.site.urls),
     path('productos/', include('productos.urls')),
     path('clientes/', include('clientes.urls')),
@@ -38,5 +38,6 @@ urlpatterns = [
 ]
 
 if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
